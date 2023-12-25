@@ -50,9 +50,12 @@ def custom_eda(data):
     st.write(data.describe())
 
     # Выведите распределения всех признаков в виде каскада графиков
+    # Выведите распределения всех признаков в виде каскада графиков
     for column in data.columns:
         st.subheader(f'Распределение {column}')
-        st.pyplot(sns.histplot(data[column], kde=True, color='skyblue').figure)
+        with pd.option_context('mode.use_inf_as_null', True):
+            st.pyplot(sns.histplot(data[column], kde=True, color='skyblue').figure)
+
 
     corr = data.corr()
     st.subheader('Матрица корреляции')
