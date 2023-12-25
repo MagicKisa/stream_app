@@ -32,7 +32,7 @@ def some_predicts(data):
         classifier.fit(X_train, y_train)
         y_pred = classifier.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
-        classification_rep = classification_report(y_test, y_pred)
+        classification_rep = classification_report(y_test, y_pred, zero_division=1)
         results[name] = {'accuracy': accuracy, 'classification_report': classification_rep}
 
     # Выведите результаты
@@ -73,7 +73,7 @@ def custom_eda(data):
     else:
         # Обычный график для большого количества уникальных значений
         st.subheader(f'Boxplot {selected_feature} по классам {target_variable}')
-        st.pyplot(sns.boxplot(x=target_variable, y=selected_feature, data=data, palette='pastel').figure)
+        st.pyplot(sns.boxplot(x=target_variable, y=selected_feature, data=data, hue=target_variable, palette='pastel', legend=False).figure)
 
     some_predicts(data)
 
