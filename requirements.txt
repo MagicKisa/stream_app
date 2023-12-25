@@ -14,6 +14,7 @@ charset-normalizer==3.2.0
 click==8.1.7
 cliff==4.3.0
 cmd2==2.4.3
+command-not-found==0.3
 contourpy==1.1.1
 cryptography==41.0.4
 cycler==0.11.0
@@ -21,6 +22,7 @@ dbus-python==1.2.18
 debtcollector==2.5.0
 decorator==5.1.1
 distro==1.7.0
+distro-info===1.1build1
 dnspython==2.4.2
 dogpile.cache==1.2.2
 email-validator==2.1.0.post1
